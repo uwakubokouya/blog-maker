@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import QualityCheckList, { QualityResult } from "@/components/QualityCheckList";
 import { generateArticleDraft, saveArticle } from "@/app/actions/articles";
 import { checkArticleQuality } from "@/app/actions/qualityCheck";
 
-export default function ArticleCreatePage() {
+function ArticleCreateContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   
@@ -290,5 +290,13 @@ export default function ArticleCreatePage() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function ArticleCreatePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ArticleCreateContent />
+    </Suspense>
   );
 }
