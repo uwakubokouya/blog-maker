@@ -1,0 +1,106 @@
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.logo {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  background-color: var(--brand-primary);
+  border-radius: 6px;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.nav {
+  flex: 1;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.navSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-left: 12px;
+  margin-bottom: 4px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--sidebar-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background-color: var(--sidebar-hover);
+  color: #ffffff;
+}
+
+.navLinkPrimary {
+  background-color: var(--brand-primary);
+  color: white;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.navLinkPrimary:hover {
+  background-color: var(--brand-primary-hover);
+}
+
+.footer {
+  padding: 16px;
+  border-top: 1px solid var(--sidebar-border);
+}
+
+.projectInfo {
+  padding: 12px;
+  background-color: var(--sidebar-hover);
+  border-radius: var(--radius-sm);
+}
+
+.projectName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.projectRole {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}

@@ -1,65 +1,93 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Dashboard() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <header className="page-header">
+        <h1 className="page-title">ダッシュボード</h1>
+        <div className="flex-gap-4">
+          <button className="btn btn-outline">プロジェクト設定</button>
+          <Link href="/articles/create" className="btn btn-primary">+ 新規記事作成</Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+      
+      <div className="page-content">
+        <div className="grid-3" style={{ marginBottom: '32px' }}>
+          <div className="card">
+            <h3 className="form-label">作成済み記事（公開中）</h3>
+            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--brand-primary)' }}>12件</div>
+          </div>
+          <div className="card">
+            <h3 className="form-label">レビュー待ち（下書き）</h3>
+            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--warning)' }}>3件</div>
+          </div>
+          <div className="card">
+            <h3 className="form-label">月間想定インプレッション</h3>
+            <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--text-primary)' }}>1,400</div>
+          </div>
         </div>
-      </main>
-    </div>
+
+        <div className="grid-2">
+          <div className="card">
+            <div className="flex-between" style={{ marginBottom: '16px' }}>
+              <h2 className="page-title" style={{ fontSize: '1.25rem' }}>対策優先キーワード</h2>
+              <Link href="/keywords" style={{ fontSize: '0.875rem', color: 'var(--accent-color)' }}>すべて見る</Link>
+            </div>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid var(--border-color)', textAlign: 'left', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                  <th style={{ padding: '8px 0' }}>キーワード</th>
+                  <th>検索意図</th>
+                  <th>優先度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid var(--border-color-focus)' }}>
+                  <td style={{ padding: '12px 0', fontWeight: 500 }}>新宿 キャバクラ 体験入店</td>
+                  <td><span className="badge badge-warning">比較検討</span></td>
+                  <td style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>SS</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--border-color-focus)' }}>
+                  <td style={{ padding: '12px 0', fontWeight: 500 }}>新宿 キャバクラ 罰金なし</td>
+                  <td><span className="badge badge-info">不安解消</span></td>
+                  <td style={{ color: 'var(--brand-primary)', fontWeight: 600 }}>S</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '12px 0', fontWeight: 500 }}>新宿 未経験 夜職</td>
+                  <td><span className="badge badge-info">不安解消</span></td>
+                  <td style={{ fontWeight: 600 }}>A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="card">
+            <div className="flex-between" style={{ marginBottom: '16px' }}>
+              <h2 className="page-title" style={{ fontSize: '1.25rem' }}>直近の作成記事</h2>
+              <Link href="/articles" style={{ fontSize: '0.875rem', color: 'var(--accent-color)' }}>記事一覧へ</Link>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ border: '1px solid var(--border-color)', padding: '12px', borderRadius: 'var(--radius-sm)' }}>
+                <div className="flex-between" style={{ marginBottom: '8px' }}>
+                  <span className="badge badge-warning">レビュー待ち</span>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>今日 10:30</span>
+                </div>
+                <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '4px' }}>歌舞伎町でノルマ・罰金なしのキャバクラが少ない理由と当店の「絶対安心」の給与システム</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>対策KW: 新宿 キャバクラ 罰金なし</div>
+              </div>
+              
+              <div style={{ border: '1px solid var(--border-color)', padding: '12px', borderRadius: 'var(--radius-sm)' }}>
+                <div className="flex-between" style={{ marginBottom: '8px' }}>
+                  <span className="badge badge-success">公開済</span>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>昨日 18:00</span>
+                </div>
+                <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '4px' }}>未経験から歌舞伎町キャバクラで働く前に知っておくべき3つの真実。店長が教えます</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>対策KW: 新宿 未経験 夜職</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
