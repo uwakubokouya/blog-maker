@@ -36,8 +36,8 @@ export async function GET(
   // 3. Construct the official LINE URL with the auto-fill text
   const lineText = article.line_default_text || "ブログからのお問い合わせです。";
   const encodeText = encodeURIComponent(lineText);
-  // Official LINE URL scheme for sending message
-  const lineUrl = `https://line.me/R/msg/text/?${encodeText}`;
+  // Official LINE URL scheme for targeting a specific Official Account
+  const lineUrl = `https://line.me/R/oaMessage/@238dianm/?${encodeText}`;
 
   // 4. Hard redirect user to LINE
   return NextResponse.redirect(lineUrl);

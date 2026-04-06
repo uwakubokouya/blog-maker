@@ -246,7 +246,7 @@ function ArticleCreateContent() {
                         return t ? `<p style="text-align: center;">${t}</p>` : `<p style="text-align: center;">&nbsp;</p>`;
                       })),
                       `<p style="text-align: center;">&nbsp;</p>`,
-                      `<p style="text-align: center;"><img onclick="location.href='${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/r/${savedArticleId}'" alt="LINEで質問だけしてみる" src="/assets/img/tmp/kcf/_mz-QhFQMh5kjBCnCrgB3Gw0c1dmRTl6Mkt3eVd4eHFxMm9wR05ZSFZGNHdxVjh5OWlhMlpXT1pvNFk/images/20260404202215.png" style="width: 584px; height: 154px; cursor: pointer;" /></p>`
+                      `<p style="text-align: center;"><img onclick="location.href='${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/r/${savedArticleId}'" alt="LINEで質問だけしてみる" src="https://d1ywb8dvwodsnl.cloudfront.net/files.qzin.jp/img/shop/egirlshakata/manager_blog/154211337/20260406152707.png" style="width: 584px; height: 154px; cursor: pointer;" /></p>`
                     ].join('\n')}
                     style={{ backgroundColor: '#fff', fontSize: '0.875rem', fontFamily: 'monospace' }}
                   />
@@ -263,7 +263,7 @@ function ArticleCreateContent() {
                             return t ? `<p style="text-align: center;">${t}</p>` : `<p style="text-align: center;">&nbsp;</p>`;
                           })),
                           `<p style="text-align: center;">&nbsp;</p>`,
-                          `<p style="text-align: center;"><img onclick="location.href='${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/r/${savedArticleId}'" alt="LINEで質問だけしてみる" src="/assets/img/tmp/kcf/_mz-QhFQMh5kjBCnCrgB3Gw0c1dmRTl6Mkt3eVd4eHFxMm9wR05ZSFZGNHdxVjh5OWlhMlpXT1pvNFk/images/20260404202215.png" style="width: 584px; height: 154px; cursor: pointer;" /></p>`
+                          `<p style="text-align: center;"><img onclick="location.href='${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/r/${savedArticleId}'" alt="LINEで質問だけしてみる" src="https://d1ywb8dvwodsnl.cloudfront.net/files.qzin.jp/img/shop/egirlshakata/manager_blog/154211337/20260406152707.png" style="width: 584px; height: 154px; cursor: pointer;" /></p>`
                         ].join('\n');
                         navigator.clipboard.writeText(copyText);
                         alert("クリップボードにコピーしました！そのまま求人サイト(HTMLエディタ)に貼り付けてください。");
