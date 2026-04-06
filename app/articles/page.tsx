@@ -67,14 +67,15 @@ export default async function ArticlesPage() {
                       <span className="badge badge-success">公開済</span>
                     </td>
                     <td style={{ padding: '16px 24px', textAlign: 'center' }}>
-                      <Link 
+                      <a 
                         href={`/r/${article.id}`} 
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="btn btn-outline" 
                         style={{ padding: '6px 12px', fontSize: '0.75rem', borderColor: 'var(--brand-primary)', color: 'var(--brand-primary)' }}
                       >
-                        【ブログに貼る用】LINE計測URLをコピー
-                      </Link>
+                        【ブログに貼る用】LINE計測リンク確認
+                      </a>
                     </td>
                   </tr>
                 );
