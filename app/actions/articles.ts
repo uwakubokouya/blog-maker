@@ -59,7 +59,7 @@ ${primaryInfo}
   }
 }
 
-export async function saveArticle(data: { title: string, content: string, line_default_text: string }) {
+export async function saveArticle(data: { title: string, content: string, line_default_text: string, keyword?: string }) {
   const supabase = await createClient();
   
   const { data: insertedData, error } = await supabase
@@ -75,6 +75,16 @@ export async function saveArticle(data: { title: string, content: string, line_d
   if (error) {
     console.error("DB保存エラー:", error);
     throw new Error("記事の保存に失敗しました");
+  }
+
+  // もしキーワードが渡されていれば、キーワード一覧でのステータスを「作成済」にする
+  if (data.keyword) {
+    const { error: kwError } = await supabase
+      .from("blogmaker_keywords")
+      .update({ status: "created" })
+      .eq("keyword", data.keyword);
+      
+    if (kwError) console.error("キーワードステータス更新エラー:", kwError);
   }
 
   return { success: true, id: insertedData.id };

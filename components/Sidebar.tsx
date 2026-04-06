@@ -12,21 +12,11 @@ export default function Sidebar() {
       <nav className={styles.nav}>
         <div className={styles.navSection}>
           <div className={styles.navLabel}>メインメニュー</div>
-          <Link href="/" className={styles.navLink}>
-            ダッシュボード
-          </Link>
           <Link href="/keywords" className={styles.navLink}>
             キーワード管理
           </Link>
           <Link href="/articles" className={styles.navLink}>
             記事一覧
-          </Link>
-        </div>
-
-        <div className={styles.navSection}>
-          <div className={styles.navLabel}>記事作成</div>
-          <Link href="/articles/create" className={`${styles.navLink} ${styles.navLinkPrimary}`}>
-            + 新規記事を作成
           </Link>
         </div>
       </nav>

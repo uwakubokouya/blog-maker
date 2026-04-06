@@ -86,7 +86,8 @@ function ArticleCreateContent() {
       const result = await saveArticle({
         title: seoTitle,
         content: content,
-        line_default_text: lineText
+        line_default_text: lineText,
+        keyword: keyword
       });
       setSavedArticleId(result.id);
     } catch (error) {

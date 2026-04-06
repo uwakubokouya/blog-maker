@@ -114,9 +114,15 @@ export default function KeywordsPage() {
                     {item.priority_score}
                   </td>
                   <td style={{ padding: '16px', textAlign: 'right' }}>
-                    <Link href={`/articles/create?keyword=${encodeURIComponent(item.keyword)}`} className="btn btn-primary" style={{ padding: '4px 8px', fontSize: '0.75rem' }}>
-                      記事化する
-                    </Link>
+                    {item.status === 'created' ? (
+                      <span className="badge badge-success" style={{ padding: '6px 12px', fontSize: '0.75rem', opacity: 0.8 }}>
+                        作成済み
+                      </span>
+                    ) : (
+                      <Link href={`/articles/create?keyword=${encodeURIComponent(item.keyword)}`} className="btn btn-primary" style={{ padding: '4px 8px', fontSize: '0.75rem' }}>
+                        記事化する
+                      </Link>
+                    )}
                   </td>
                 </tr>
               ))}

@@ -20,7 +20,6 @@ export default async function ArticlesPage() {
       <header className="page-header">
         <h1 className="page-title">記事一覧</h1>
         <div className="flex-gap-4">
-          <Link href="/articles/create" className="btn btn-primary">+ 新規記事作成</Link>
         </div>
       </header>
 
@@ -39,7 +38,6 @@ export default async function ArticlesPage() {
                 <th style={{ padding: '16px 24px' }}>タイトル（SEO / 応募タイトル）</th>
                 <th style={{ padding: '16px 24px', width: '200px' }}>LINE起動（成果）</th>
                 <th style={{ padding: '16px 24px', width: '200px' }}>ステータス</th>
-                <th style={{ padding: '16px 24px', width: '200px', textAlign: 'center' }}>計測用リンク</th>
               </tr>
             </thead>
             <tbody>
@@ -66,24 +64,13 @@ export default async function ArticlesPage() {
                     <td style={{ padding: '16px 24px' }}>
                       <span className="badge badge-success">公開済</span>
                     </td>
-                    <td style={{ padding: '16px 24px', textAlign: 'center' }}>
-                      <a 
-                        href={`/r/${article.id}`} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline" 
-                        style={{ padding: '6px 12px', fontSize: '0.75rem', borderColor: 'var(--brand-primary)', color: 'var(--brand-primary)' }}
-                      >
-                        【ブログに貼る用】LINE計測リンク確認
-                      </a>
-                    </td>
                   </tr>
                 );
               })}
 
               {(!articles || articles.length === 0) && (
                 <tr>
-                  <td colSpan={4} style={{ padding: '32px', textAlign: 'center', color: 'var(--text-muted)' }}>
+                  <td colSpan={3} style={{ padding: '32px', textAlign: 'center', color: 'var(--text-muted)' }}>
                     記事がありません
                   </td>
                 </tr>
